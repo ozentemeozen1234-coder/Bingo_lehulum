@@ -1,0 +1,34 @@
+import { useState } from 'react';
+
+export default function App() {
+  // ለምሳሌ ያህል አንዱን የጂአይኤፍ (GIF) ሊንክ ተጠቅሜያለሁ። 
+  // ያንተን የጂአይኤፍ ሊንክ በዚህ መጠቀም ትችላለህ።
+  const gifUrl = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJ4ZzVqbm5qbm5qbm5qbm5qbm5qbm5qbm5qbm5qbm5qbm5qbm5qJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxHOGTdzJC/giphy.gif";
+
+  return (
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
+      <h1 className="text-2xl font-bold mb-6 text-gray-800">የቴሌግራም ሚኒ አፕ</h1>
+      
+      <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-sm">
+        <p className="mb-4 text-gray-600">እንኳን ወደ አፕሊኬሽኑ በደህና መጡ!</p>
+        
+        {/* GIF ማሳያ ክፍል */}
+        <div className="w-full h-64 overflow-hidden rounded-lg border border-gray-100 flex items-center justify-center bg-gray-100">
+          <img 
+            src={gifUrl} 
+            alt="ሰላምታ GIF" 
+            className="w-full h-full object-cover" 
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        
+        <button 
+          onClick={() => window.location.reload()}
+          className="mt-6 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+        >
+          አደስ (Refresh)
+        </button>
+      </div>
+    </div>
+  );
+}
